@@ -80,7 +80,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone" keysAndValues: kCIInputImageKey, beginImage, nil];
         CIImage *outputImage = [filter outputImage];
@@ -101,7 +101,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CIPhotoEffectMono" keysAndValues: kCIInputImageKey, beginImage, nil];
         CIImage *outputImage = [filter outputImage];
@@ -121,7 +121,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
    
         float imageHeight = self.imageToFilter.image.size.height;
@@ -147,7 +147,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CIPhotoEffectChrome" keysAndValues: kCIInputImageKey, beginImage, nil];
         CIImage *outputImage = [filter outputImage];
@@ -167,7 +167,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CIColorInvert" keysAndValues: kCIInputImageKey, beginImage, nil];
         CIImage *outputImage = [filter outputImage];
@@ -187,7 +187,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CIPixellate" keysAndValues: kCIInputImageKey, beginImage, nil];
         CIImage *outputImage = [filter outputImage];
@@ -208,7 +208,7 @@
     
     dispatch_async(queue, ^{
         
-        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.imageToFilter.image)];
+        CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(self.originalImage)];
         CIContext *context = [CIContext contextWithOptions:nil];
         CIFilter *filter = [CIFilter filterWithName:@"CIDotScreen" keysAndValues: kCIInputImageKey, beginImage, nil];
         CIImage *outputImage = [filter outputImage];
