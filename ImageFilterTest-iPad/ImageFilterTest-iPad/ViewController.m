@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
 @property UIImage* originalImage;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -39,6 +40,37 @@
 
 - (IBAction)revertToOriginalImage:(id)sender {
     self.imageToFilter.image = self.originalImage;
+}
+- (IBAction)toggleFilterRow:(UIButton *)sender {
+    NSLog(@"Button clicked");
+    sender.layer.zPosition = 4;
+    
+    if (self.scrollView.frame.origin.x < -100) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        self.scrollView.frame = CGRectMake(0, 914, 700, 90);
+        [UIView commitAnimations];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        sender.frame = CGRectMake(700, 914, 70, 90);
+        [UIView commitAnimations];
+    }
+    else{
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        self.scrollView.frame = CGRectMake(-700, 914, 700, 90);
+        [UIView commitAnimations];
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+        sender.frame = CGRectMake(0, 914, 70, 90);
+        [UIView commitAnimations];
+    }
 }
 
 
